@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 
 
 const Register = () => {
-    const {createUser, handleUpdateProfile} = useContext(AuthContext)
+    const {createUser, handleUpdateProfile, verificationEmail} = useContext(AuthContext)
     const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
 
@@ -49,10 +49,16 @@ const Register = () => {
             .then(() =>{
               toast.success('User Created Successful')
               e.target.reset()
-              console.log(user)
+
+              // console.log(user)
               navigate('/')
             } )
-            
+
+            // send verification email 
+            verificationEmail(user)
+            .then( () =>{
+              toast.success('Please Check Email and Verify Your Account')
+            })
         })
         .catch(error =>{
             console.log(error)
@@ -140,11 +146,7 @@ const Register = () => {
                     <input className="mr-2" type="checkbox" name="check" id="check" />
                     <label className="text-white" htmlFor="check">Accept Our Trams And Conditions</label>
                   </div>
-               <label className="label">
-                 <a href="#" className="label-text-alt link link-hover text-white">
-                   Forgot password?
-                 </a>
-               </label>
+            
              </div>
             
              <div className="form-control mt-6">

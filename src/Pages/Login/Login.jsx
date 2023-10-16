@@ -3,24 +3,25 @@ import './Login.css'
 import photo from '../../assets/undraw_secure_login_pdn4.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { FaEye,FaEyeSlash  } from "react-icons/fa";
 import SocialLogin from '../../SocialLogin/SocialLogin';
 import toast from 'react-hot-toast';
 
 const Login = () => {
-    const {signInUser} = useContext(AuthContext)
+    const {signInUser, forgetPassword} = useContext(AuthContext)
     const [showPass, setShowPass] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
+    const emailRef = useRef(null)
 
     const handleLogin = e =>{
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
-        console.log(email, password)
+        // console.log(email, password)
 
         if(password.length < 6){
              toast.error('Password mast be at 6 character')
@@ -36,9 +37,14 @@ const Login = () => {
         .then( res =>{
 
             const user = res.user
+           if(user.emailVerified){
             toast.success('User Login Successful')
+          }else{
+            toast.error('Please Check Email and Verify Your Account')
+            return
+          }
             e.target.reset()
-            console.log(user)
+            // console.log(user)
             navigate(location?.state ? location.state : '/')
         })
         .catch(error =>{
@@ -47,7 +53,28 @@ const Login = () => {
         })
     }
 
+const handleForgetPass = () =>{
+  const email = emailRef.current.value 
+  if(!email){
+    toast.error('Please Provide a Valid Email')
+    return
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    toast.error('Please Write a Valid Email')
+    return
+  }
 
+  forgetPassword(email)
+  .then( () =>{
+    toast.success('please check your email')
+  })
+  .catch(error =>{
+    console.log(error)
+  })
+
+
+  
+  // console.log('send reset email',emailRef.current.value )
+}
 
   return (
     <div className="container">
@@ -72,6 +99,7 @@ const Login = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
+                  ref={emailRef}
                   className="input input-bordered"
                   required
                 />
@@ -98,7 +126,7 @@ const Login = () => {
                 </div>
                </div>
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover text-white">
+                  <a href="#" onClick={handleForgetPass} className="label-text-alt text-sm link link-hover text-white">
                     Forgot password?
                   </a>
                 </label>
