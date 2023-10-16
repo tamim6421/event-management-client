@@ -1,11 +1,12 @@
 import Swal from "sweetalert2";
 import Navbar from "../../Components/Navbar/Navbar";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 
 const EditInformation = () => {
     const usersInfo = useLoaderData()
     const {_id, bName,gName, phone, address,email, date, photo} = usersInfo
+    const navigate = useNavigate()
 
 
     const handleAddInfo = event =>{
@@ -45,6 +46,10 @@ const EditInformation = () => {
 
     }
 
+    const handleBack = () =>{
+        navigate(-1)
+    }
+
     return (
         <div className="">
         <Navbar></Navbar>
@@ -76,7 +81,7 @@ const EditInformation = () => {
           data-aos="fade-down"
         >
       
-         Update : {bName} & {gName}
+         Update Info : {bName} & {gName}
           <hr
             className=" border-2 w-24 mt-2 border-orange-500 mx-auto"
             data-aos="fade-up"
@@ -87,7 +92,7 @@ const EditInformation = () => {
           <div className="md:flex gap-4  mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold  ">Boy Name</span>
+                <span className="label-text text-gray-500 text-lg font-semibold  " data-aos="fade-up">Boy Name</span>
               </label>
               <label className="input-group">
                 <input
@@ -103,7 +108,7 @@ const EditInformation = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Girl Name</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down" >Girl Name</span>
               </label>
               <label className="input-group">
                 <input
@@ -121,7 +126,7 @@ const EditInformation = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Phone Number</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Phone Number</span>
               </label>
               <label className="input-group">
                 <input
@@ -136,7 +141,7 @@ const EditInformation = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Address</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Address</span>
               </label>
               <label className="input-group">
                 <input
@@ -153,7 +158,7 @@ const EditInformation = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Email</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Email</span>
               </label>
               <label className="input-group">
                 <input
@@ -168,7 +173,7 @@ const EditInformation = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Date</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Date</span>
               </label>
               <label className="input-group">
                 <input
@@ -186,7 +191,7 @@ const EditInformation = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Couple Photo URL</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Couple Photo URL</span>
               </label>
               <label className="input-group">
                 <input
@@ -211,7 +216,7 @@ const EditInformation = () => {
           />
         </form>
        
-
+        <button onClick={handleBack} className="btn block mx-auto mt-3 text-white bg-rose-300 hover:bg-rose-400" data-aos="fade-up">Back</button>
       </div>
      
    

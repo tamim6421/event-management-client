@@ -41,11 +41,31 @@ const Login = () => {
             toast.success('User Login Successful')
           }else{
             toast.error('Please Check Email and Verify Your Account')
+            navigate('/login')
             return
           }
             e.target.reset()
-            // console.log(user)
+            console.log(user)
             navigate(location?.state ? location.state : '/')
+            
+            const users = {
+              email,
+              lastLogIn : user.metadata.lastSignInTime
+            }
+
+            // update last login in database 
+            fetch(`http://localhost:5000/users`,{
+              method: "PATCH",
+              headers:{
+                'content-type': 'application/json'
+              },
+              body:JSON.stringify(users)
+            })
+            .then(res => res.json())
+            .then(data =>{
+              console.log(data)
+            })
+
         })
         .catch(error =>{
             console.log(error)

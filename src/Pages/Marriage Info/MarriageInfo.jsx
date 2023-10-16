@@ -83,30 +83,35 @@ const MarriageInfo = () => {
         </h3>
 
         <form onSubmit={handleAddInfo}>
-          <div className="md:flex gap-4  mb-8 px-4">
+        <div className="md:flex gap-4  mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold  ">Boy Name</span>
+                <span className="label-text text-gray-500 text-lg font-semibold  " data-aos="fade-up">Boy Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   placeholder="Boy Name"
                   name="bName"
+                  required
                   className="input input-bordered w-full"
+                  data-aos="fade-up"
+
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Girl Name</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down" >Girl Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   placeholder="Girl Name"
                   name="gName"
+                  required
                   className="input input-bordered w-full"
+                  data-aos="fade-down"
                 />
               </label>
             </div>
@@ -115,27 +120,31 @@ const MarriageInfo = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Phone Number</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Phone Number</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="phone"
+                  required
                   placeholder="Phone Number"
                   className="input input-bordered w-full"
+                  data-aos="fade-up"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Address</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Address</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   placeholder="Address"
+                  required
                   name="address"
                   className="input input-bordered w-full"
+                  data-aos="fade-down"
                 />
               </label>
             </div>
@@ -143,27 +152,31 @@ const MarriageInfo = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Email</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Email</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="email"
+                  required
                   placeholder="Email"
                   className="input input-bordered w-full"
+                  data-aos="fade-up"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Date</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-down">Date</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   placeholder="Date"
+                    required
                   name="date"
                   className="input input-bordered w-full"
+                  data-aos="fade-down"
                 />
               </label>
             </div>
@@ -172,14 +185,16 @@ const MarriageInfo = () => {
           <div className="md:flex gap-4 mb-8 px-4">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text text-gray-500 text-lg font-semibold ">Couple Photo URL</span>
+                <span className="label-text text-gray-500 text-lg font-semibold " data-aos="fade-up">Couple Photo URL</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="photo"
+                
                   placeholder="Couple Photo URL"
                   className="input input-bordered w-full"
+                  data-aos="fade-up"
                 />
               </label>
             </div>
@@ -191,11 +206,12 @@ const MarriageInfo = () => {
             value="Add Info"
             className="btn btn-block text-white bg-rose-300 hover:bg-rose-400"
             id=""
+            data-aos="fade-down"
           />
         </form>
         <div className="my-10">
         <Link to='/coupleInfo'>
-        <button className="btn block mx-auto w-full text-white bg-rose-300 hover:bg-rose-400">See Info</button>
+        <button className="btn block mx-auto w-full text-white bg-rose-300 hover:bg-rose-400" data-aos="fade-up">See Info</button>
         </Link>
       </div>
 

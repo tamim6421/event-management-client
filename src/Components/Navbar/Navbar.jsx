@@ -37,16 +37,7 @@ const Navbar = () => {
 </NavLink>
     </li>
 
-    <li>
-    <NavLink
-  to="/marriage"
-  className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "bg-pink-300 text-white" : "hover:bg-rose-200 hover:text-white"
-  }
->
-  Marriage Info
-</NavLink>
-    </li>
+ 
    
           <li>
     <NavLink
@@ -56,6 +47,17 @@ const Navbar = () => {
   }
 >
   Package
+</NavLink>
+    </li>
+
+    <li>
+    <NavLink
+  to="/team"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-pink-300 text-white" : " hover:bg-rose-200 hover:text-white"
+  }
+>
+  Team
 </NavLink>
     </li>
           <li>
@@ -68,14 +70,28 @@ const Navbar = () => {
   Gallery
 </NavLink>
     </li>
+ 
+
+    <li>
+    <NavLink
+  to="/marriage"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-pink-300 text-white" : "hover:bg-rose-200 hover:text-white"
+  }
+>
+  Marriage Info
+</NavLink>
+    </li>
+
+
           <li>
     <NavLink
-  to="/team"
+  to="/users"
   className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "bg-pink-300 text-white" : " hover:bg-rose-200 hover:text-white"
   }
 >
-  Team
+  Users
 </NavLink>
     </li>
       

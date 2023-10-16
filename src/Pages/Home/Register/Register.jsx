@@ -50,7 +50,7 @@ const Register = () => {
               toast.success('User Created Successful')
               e.target.reset()
 
-              // console.log(user)
+              console.log(user)
               navigate('/')
             } )
 
@@ -59,6 +59,25 @@ const Register = () => {
             .then( () =>{
               toast.success('Please Check Email and Verify Your Account')
             })
+
+            // store user information
+            const lastSignIn = user.metadata.lastSignInTime
+            const users = {
+             name,photo,email,lastSignIn
+            }
+            fetch('http://localhost:5000/users', {
+              method:"POST",
+              headers: {
+                'content-type' : 'application/json'
+              },
+              body: JSON.stringify(users)
+            })
+            .then(res => res.json())
+            .then(data =>{
+              console.log(data)
+              
+            })
+
         })
         .catch(error =>{
             console.log(error)
@@ -150,7 +169,7 @@ const Register = () => {
              </div>
             
              <div className="form-control mt-6">
-               <button className="btn bg-rose-500 text-white btn-error">Login</button>
+               <button className="btn bg-rose-500 text-white btn-error">register</button>
                <p className='text-white mt-4'>Already have an account? Please  <Link to='/login'>   <span className='text-rose-600 font-semibold underline'> Login</span> </Link></p>
              </div>
              <div>
