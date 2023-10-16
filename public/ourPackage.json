@@ -1,0 +1,40 @@
+[
+    {
+      "id": 1,
+      "name": "Basic Package",
+      "price": "$100",
+      "features": [
+        "Venue Booking",
+        "Basic Decoration",
+        "Catering for 50 Guests",
+        "Event Coordinator",
+        "1 Photographer"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Silver Package",
+      "price": "$200",
+      "features": [
+        "Venue Booking",
+        "Catering for 100 Guests",
+        "Event Coordinator",
+        "2 Photographers",
+        "DJ Services"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Gold Package",
+      "price": "$500",
+      "features": [
+        "Luxury Decoration",
+        "Event Coordinator",
+        "3 Photographers",
+        "DJ Services",
+        "Live Band"
+        
+      ]
+    }
+  ]
+  

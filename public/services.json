@@ -1,0 +1,58 @@
+
+    [
+      {
+        "id": 1,
+        "name": "Event Planning",
+        "image": "https://i.ibb.co/3pJKmq3/planning.jpg",
+        "price": "$1500 - $5000",
+        "short_description": "Comprehensive event planning services tailored to your needs.",
+        "big_description": "Our event planning service covers everything from concept development to execution. We work closely with you to bring your vision to life, handling every detail to ensure a seamless and unforgettable event."
+      },
+      {
+        "id": 2,
+        "name": "Design and Decor",
+        "image": "https://i.ibb.co/jV6MFS4/design-and-decore.jpg",
+        "price": "$1000 - $3000",
+        "short_description": "Elegant designs and stunning decor to transform your event space.",
+        "big_description": "Our design and decor service focuses on creating a visually captivating atmosphere for your event. We collaborate with top designers and decorators to bring creativity and style to every corner, ensuring a memorable experience for your guests."
+      },
+      {
+        "id": 3,
+        "name": "Photography",
+        "image": "https://i.ibb.co/G3sVjnc/photo.jpg",
+        "price": "$800 - $2500",
+        "short_description": "Capture the moments that matter with our expert photography services.",
+        "big_description": "Our photography service is led by a team of skilled professionals who specialize in capturing the essence and emotion of your event. We use state-of-the-art equipment and techniques to deliver stunning, high-quality images that you'll cherish forever."
+      },
+      {
+        "id": 4,
+        "name": "Beauty and Makeup",
+        "image": "https://i.ibb.co/QrDgGmM/mekup.jpg",
+        "price": "$300 - $800",
+        "short_description": "Professional makeup artistry to enhance your natural beauty.",
+        "big_description": "Our makeup artists are dedicated to enhancing your natural features and ensuring you look and feel your best on your special day. Using premium products and techniques, we create looks that are tailored to your style and preferences."
+      },
+      {
+        "id": 5,
+        "name": "Cooking",
+        "image": "https://i.ibb.co/5LR78BH/coocking.jpg",
+        "price": "$1000 - $4000",
+        "short_description": "Delicious, customized menus prepared by our expert chefs.",
+        "big_description": "Our cooking service offers a divers eoptions to suit your tastes and preferences. Our experienced chefs use the finest ingredients to create mouthwatering dishes that will leave a lasting impression on your guests."
+      },
+      {
+        "id": 6,
+        "name": "Catering",
+        "image": "https://i.ibb.co/S7bXYdg/catring.jpg",
+        "price": "$1200 - $5000",
+        "short_description": "Exquisite catering services to delight your guests' palates.",
+        "big_description": "Our catering service combines exceptional cuisine with impeccable service. We offer a wide range of menu options to accommodate various dietary preferences and requirements. Our team ensures that every meal is a memorable culinary experience."
+      }
+    ]
+  
+  
+ 
+
+
+
+
