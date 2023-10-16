@@ -11,6 +11,10 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import OurPackage from "../Components/PrivetRoute/OurPackage";
 import OurGallery from "../Components/PrivetRoute/OurGallery";
 import OurTeam from "../Components/PrivetRoute/OurTeam";
+import MarriageInfo from "../Pages/Marriage Info/MarriageInfo";
+
+import CoupleInfo from "../Pages/Marriage Info/CoupleInfo";
+import EditInformation from "../Pages/Marriage Info/EditInformation";
 
 
 const router = createBrowserRouter([
@@ -56,6 +60,20 @@ const router = createBrowserRouter([
             {
                 path: '/team',
                 element: <PrivetRoute><OurTeam></OurTeam></PrivetRoute>
+            },
+            {
+                path:'/marriage',
+                element:<MarriageInfo></MarriageInfo>
+            },
+            {
+                path:'/coupleInfo',
+                element:<CoupleInfo></CoupleInfo>,
+                loader: () => fetch('http://localhost:5000/eventInfo')
+            },
+            {
+                path:'/editInfo/:id',
+                element: <EditInformation></EditInformation>,
+                loader:({params}) => fetch(`http://localhost:5000/eventInfo/${params.id}`)
             }
         ]
     }

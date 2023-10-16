@@ -36,6 +36,17 @@ const Navbar = () => {
   Contract
 </NavLink>
     </li>
+
+    <li>
+    <NavLink
+  to="/marriage"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "bg-pink-300 text-white" : "hover:bg-rose-200 hover:text-white"
+  }
+>
+  Marriage Info
+</NavLink>
+    </li>
    
           <li>
     <NavLink
