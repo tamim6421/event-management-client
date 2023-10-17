@@ -45,6 +45,7 @@ const Register = () => {
         createUser(email, password)
         .then( res =>{
             const user = res.user
+         
             handleUpdateProfile(name, photo)
             .then(() =>{
               toast.success('User Created Successful')
@@ -52,10 +53,13 @@ const Register = () => {
 
               console.log(user)
               navigate('/')
+
+
             } )
 
             // send verification email 
-            verificationEmail(user)
+
+            verificationEmail()
             .then( () =>{
               toast.success('Please Check Email and Verify Your Account')
             })
