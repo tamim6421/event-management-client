@@ -6,43 +6,57 @@ import { AiFillDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 
+
 const Users = () => {
   const loadedUser = useLoaderData();
   const [users, setUsers] = useState(loadedUser);
+  // console.log(users)
 
-  const handleDelete = (id) =>{
-    console.log('delete' ,id)
+  const handleDelete = id =>{
+   
+    console.log('delete', id)
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-                    
-            fetch(`http://localhost:5000/users/${id}`,{
-                method:"DELETE"
-            })
-        .then(res => res.json())
-        .then(data =>{
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
 
-            if(data.deletedCount){
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                  )
-                  // eslint-disable-next-line react/prop-types
-                  const remaining = users.filter(usr => usr._id !== id)
-                  setUsers(remaining)
-            }       
-        })
-        }
-      })
-  }
+        fetch(`http://localhost:5000/users/${id}`,{
+               method:"DELETE"
+           })
+
+           .then(res => res.json())
+           .then(data =>{
+               console.log(data)
+               if(data.deletedCount > 0){
+                 Swal.fire(
+                   'Deleted!',
+                   'Your file has been deleted.',
+                   'success'
+                 )
+               
+               const remaining = users.filter(use => use._id !== id)
+               setUsers(remaining)
+               }
+              
+           })
+      }
+    })
+
+
+
+
+
+           
+   
+}
+
+
  
   return (
     <div className="bg-gray-50">

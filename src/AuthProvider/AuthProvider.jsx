@@ -37,7 +37,7 @@ const googleLogin = () =>{
     }
 
     const verificationEmail = () =>{
-        setLoading(true)
+        // setLoading(true)
         return sendEmailVerification(auth.currentUser)
     }
 
@@ -49,11 +49,11 @@ const googleLogin = () =>{
           } )
     }
 
-    useState( () =>{
+    useEffect( () =>{
         const unSubscribe = onAuthStateChanged(auth, currentUser =>{
             // console.log(currentUser)
-            setUser(currentUser)
             setLoading(false)
+            setUser(currentUser)
         })
         return () =>{
             unSubscribe()

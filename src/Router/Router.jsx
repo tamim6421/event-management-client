@@ -12,7 +12,6 @@ import OurPackage from "../Components/PrivetRoute/OurPackage";
 import OurGallery from "../Components/PrivetRoute/OurGallery";
 import OurTeam from "../Components/PrivetRoute/OurTeam";
 import MarriageInfo from "../Pages/Marriage Info/MarriageInfo";
-
 import CoupleInfo from "../Pages/Marriage Info/CoupleInfo";
 import EditInformation from "../Pages/Marriage Info/EditInformation";
 import Users from "../Pages/Users/Users";
@@ -56,7 +55,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/gallery',
-                element:<PrivetRoute><OurGallery></OurGallery></PrivetRoute>
+                element:<OurGallery></OurGallery>
             },
             {
                 path: '/team',

@@ -37,12 +37,13 @@ const Login = () => {
         .then( res =>{
 
             const user = res.user
+
            if(user.emailVerified){
             toast.success('User Login Successful')
           }else{
             toast.error('Please Check Email and Verify Your Account')
             navigate('/login')
-            return
+           
           }
             e.target.reset()
             console.log(user)
